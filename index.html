@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hoist Capital Partners</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: #fff;
+      color: #222;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a {
+      color: #2563eb; /* blue */
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 48px;
+      background: #0f172a;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+    nav a {
+      margin-left: 32px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #60a5fa;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 90vh;
+      background:
+        linear-gradient(90deg, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.85) 100%),
+        url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero h2 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #fff;
+      max-width: 900px;
+      line-height: 1.1;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    }
+
+    /* Main content sections */
+    main {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 24px;
+    }
+    section {
+      margin-bottom: 64px;
+    }
+    section h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #0f172a;
+      border-left: 4px solid #2563eb;
+      padding-left: 12px;
+    }
+    section p {
+      font-size: 1.125rem;
+      color: #444;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #a1a1aa;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 12px;
+        width: 100%;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 20px;
+        display: inline-block;
+        margin-bottom: 8px;
+      }
+      .hero h2 {
+        font-size: 2.25rem;
+      }
+      main {
+        margin: 40px auto;
+        padding: 0 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hoist Capital Partners</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#strategy">Strategy</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Building Enduring Partnerships. Creating Lasting Value.</h2>
+  </div>
+
+  <main>
+    <section id="about">
+      <h3>About Us</h3>
+      <p>Hoist Capital Partners is a private investment firm focused on partnering with strong management teams to grow exceptional middle-market companies. We bring strategic guidance, operational support, and long-term capital to every business we invest in.</p>
+    </section>
+
+    <section id="strategy">
+      <h3>Investment Strategy</h3>
+      <p>We invest in growth-oriented businesses across a variety of sectors. Our flexible capital and hands-on approach allow us to support both organic growth initiatives and strategic acquisitions. We take pride in aligning our interests with those of our partners.</p>
+    </section>
+
+    <section id="portfolio">
+      <h3>Portfolio</h3>
+      <p>Our portfolio includes a diverse set of businesses across industrials, services, consumer, and healthcare. We focus on companies with strong fundamentals, defensible market positions, and meaningful growth potential.</p>
+    </section>
+
+    <section id="contact">
+      <h3>Contact</h3>
+      <p>Email us at <a href="mailto:info@hoistcapital.com">info@hoistcapital.com</a> or connect with us on LinkedIn.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Hoist Capital Partners. All rights reserved.
+  </footer>
+</body>
+</html>
