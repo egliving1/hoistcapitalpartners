@@ -15,6 +15,9 @@
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
     }
+    html {
+      scroll-behavior: smooth; /* Smooth scrolling */
+    }
     body {
       background: #fff;
       color: #222;
@@ -22,11 +25,12 @@
       font-size: 16px;
     }
     a {
-      color: #2563eb; /* blue */
+      color: #2563eb;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
     a:hover {
-      text-decoration: underline;
+      color: #1e40af;
     }
 
     /* Header */
@@ -45,13 +49,18 @@
       font-weight: 700;
       font-size: 1.5rem;
       letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+    }
+    header h1 img {
+      height: 40px;
+      margin-right: 12px;
     }
     nav a {
       margin-left: 32px;
       font-weight: 600;
       font-size: 0.95rem;
       color: #fff;
-      transition: color 0.3s ease;
     }
     nav a:hover {
       color: #60a5fa;
@@ -69,28 +78,25 @@
       align-items: center;
       text-align: center;
       padding: 0 20px;
+      color: white;
     }
     .hero h2 {
       font-size: 3.5rem;
       font-weight: 700;
-      color: #fff;
       max-width: 900px;
       line-height: 1.1;
-      animation: fadeInUp 1s ease forwards;
       opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards 0.3s;
     }
     @keyframes fadeInUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
     }
 
-    /* Main content sections */
+    /* Main content */
     main {
       max-width: 900px;
       margin: 60px auto;
@@ -98,6 +104,13 @@
     }
     section {
       margin-bottom: 64px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     section h3 {
       font-size: 2rem;
@@ -150,7 +163,11 @@
 </head>
 <body>
   <header>
-    <h1>Hoist Capital Partners</h1>
+    <h1>
+      <!-- Replace 'logo.png' with your actual logo file path -->
+      <img src="logo.png" alt="Hoist Capital Partners Logo" />
+      Hoist Capital Partners
+    </h1>
     <nav>
       <a href="#about">About</a>
       <a href="#strategy">Strategy</a>
@@ -188,5 +205,21 @@
   <footer>
     &copy; 2025 Hoist Capital Partners. All rights reserved.
   </footer>
+
+  <script>
+    // Animate sections on scroll
+    function revealOnScroll() {
+      const sections = document.querySelectorAll('main section');
+      const windowHeight = window.innerHeight;
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if (top < windowHeight - 100) {
+          section.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 </body>
 </html>
